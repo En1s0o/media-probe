@@ -1,0 +1,2 @@
+server.port: 62062
+server.media.probe.timeout: "${MEDIA_PROBE_TIMEOUT:15000}"

@@ -1,0 +1,20 @@
+version: '2.2'
+
+services:
+  media-probe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 'media-probe:latest'
+    container_name: 'media-probe'
+    restart: always
+    env_file:
+      - media-probe.env
+    ulimits:
+      sigpending: 120465
+      nproc: 120465
+      nofile:
+        soft: 1000000
+        hard: 1000000
+    ports:
+      - '62062:62062'
